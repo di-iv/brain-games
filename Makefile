@@ -4,5 +4,8 @@ install:
 brain-games:
 	node bin/brain-games.js
 
+link:
+	npm link
+
 lint:
 	npx eslint .
