@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
-import { numberOfRounds } from './consts.js';
+import { allRoundsCount } from './consts.js';
 
 function startGame(gameName) {
   console.log(gameName.rules);
-  let rounds = numberOfRounds;
+  let playedRoundsCount = 0;
 
-  function play(roundsLeft) {
-    if (roundsLeft === 0) {
+  function play() {
+    if (playedRoundsCount === allRoundsCount) {
       console.log('Congratulations, Bill!');
       return;
     }
@@ -22,10 +22,11 @@ function startGame(gameName) {
       return;
     }
     console.log('Correct!');
-    play(rounds -= 1);
+    playedRoundsCount += 1;
+    play();
   }
 
-  play(rounds);
+  play();
 }
 
 export default startGame;
