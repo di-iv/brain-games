@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import getRandomNumber from '../src/heplers.js';
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 let roundCount = 3;
@@ -9,7 +10,7 @@ function play(roundLeft) {
     console.log('Congratulations, Bill!');
     return;
   }
-  const randomNumber = Math.floor(Math.random() * 100 + 1);
+  const randomNumber = getRandomNumber(1, 100);
   console.log(`Question: ${randomNumber}`);
   const isNumberEven = randomNumber % 2 === 0;
   const correctAnswer = isNumberEven ? 'yes' : 'no';
