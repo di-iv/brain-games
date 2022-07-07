@@ -1,13 +1,16 @@
 import readlineSync from 'readline-sync';
+import { sayHello, getUserName } from './cli.js';
 import { allRoundsCount } from './consts.js';
 
 function startGame(gameName) {
+  sayHello();
+  const userName = getUserName();
   console.log(gameName.rules);
   let playedRoundsCount = 0;
 
   function play() {
     if (playedRoundsCount === allRoundsCount) {
-      console.log('Congratulations, Bill!');
+      console.log(`Congratulations, ${userName}!`);
       return;
     }
     const question = gameName.getQuestion();
@@ -18,7 +21,7 @@ function startGame(gameName) {
     const isNotCorrectUserAnswer = correctAnswer !== userAnswer;
     if (isNotCorrectUserAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log('Let\'s try again, Bill!');
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
     console.log('Correct!');
