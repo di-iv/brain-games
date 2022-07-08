@@ -9,4 +9,11 @@ function getRandomOperator() {
   return operators[randomOperatorIndex];
 }
 
-export { getRandomNumber, getRandomOperator };
+function getGcd(firstNumber, secondNumber) {
+  if (secondNumber === 0) {
+    return firstNumber;
+  }
+  return getGcd(secondNumber, firstNumber % secondNumber);
+}
+
+export { getRandomNumber, getRandomOperator, getGcd };
