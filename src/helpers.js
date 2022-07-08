@@ -28,9 +28,14 @@ function generateProgression(progressionLength, progressionStep, hiddenNumberInd
   return { progression, hiddenNumber };
 }
 
+function isNumberEven(number) {
+  return number % 2 === 0;
+}
+
 export {
   getRandomNumber,
   getRandomOperator,
   getGcd,
   generateProgression,
+  isNumberEven,
 };
