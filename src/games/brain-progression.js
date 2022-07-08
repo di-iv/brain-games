@@ -7,7 +7,7 @@ const brainProgression = {
   getQuestion: () => {
     const progressionLength = getRandomNumber(5, 10);
     const progressionStep = getRandomNumber(1, 15);
-    const hiddenNumberIndex = getRandomNumber(0, progressionLength);
+    const hiddenNumberIndex = getRandomNumber(0, progressionLength - 1);
     currentProgression = generateProgression(progressionLength, progressionStep, hiddenNumberIndex);
     return currentProgression.progression;
   },
