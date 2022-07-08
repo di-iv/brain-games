@@ -16,4 +16,21 @@ function getGcd(firstNumber, secondNumber) {
   return getGcd(secondNumber, firstNumber % secondNumber);
 }
 
-export { getRandomNumber, getRandomOperator, getGcd };
+function generateProgression(progressionLength, progressionStep, hiddenNumberIndex) {
+  const startNumber = getRandomNumber(1, 20);
+  let progression = [startNumber];
+  for (let i = 1; i < progressionLength; i += 1) {
+    progression.push(startNumber + progressionStep * i);
+  }
+  const hiddenNumber = progression[hiddenNumberIndex];
+  progression.splice(hiddenNumberIndex, 1, '..');
+  progression = progression.join(' ');
+  return { progression, hiddenNumber };
+}
+
+export {
+  getRandomNumber,
+  getRandomOperator,
+  getGcd,
+  generateProgression,
+};
