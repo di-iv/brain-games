@@ -1,4 +1,4 @@
-import { getRandomNumber, getRandomOperator } from '../heplers.js';
+import { getRandomNumber, getRandomOperator } from '../helpers.js';
 
 let currentFirstNumber = 0;
 let currentSecondNumber = 0;

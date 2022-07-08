@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../heplers.js';
+import { getRandomNumber } from '../helpers.js';
 
 let currentNumber = 0;
 const isNumberEven = () => currentNumber % 2 === 0;
