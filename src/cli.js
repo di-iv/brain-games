@@ -3,7 +3,8 @@ import readlineSync from 'readline-sync';
 let userName;
 
 function sayHello() {
-  userName = readlineSync.question('What is your name? ');
+  console.log('Welcome to the Brain Games!');
+  userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 }
 
